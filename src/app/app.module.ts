@@ -4,20 +4,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './components/products/products.component';
-import { StructureComponent } from './components/structure/structure.component';
 import { ClientsComponent } from './components/clients/clients.component';
-import { OrderComponent } from './components/sales/order/order.component';
 import { SaleConfirmComponent } from './components/sales/sale-confirm/sale-confirm.component';
 import { SaleListComponent } from './components/sales/sale-list/sale-list.component';
+import { BasicListComponent } from './components/core/basic-list/basic-list.component';
+import { ModalCreateClientComponent } from './components/core/modal/modal-create-client/modal-create-client.component';
+import { ModalCreateProductComponent } from './components/core/modal/modal-create-product/modal-create-product.component';
+import { ModalConfirmOrderComponent } from './components/core/modal/modal-confirm-order/modal-confirm-order.component';
+import { ModalRemoveProductComponent } from './components/core/modal/modal-remove-product/modal-remove-product.component';
+import { NavComponent } from './components/core/nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    StructureComponent,
     ClientsComponent,
-    OrderComponent,
     SaleConfirmComponent,
-    SaleListComponent
+    SaleListComponent,
+    BasicListComponent,
+    ModalCreateClientComponent,
+    ModalCreateProductComponent,
+    ModalConfirmOrderComponent,
+    ModalRemoveProductComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

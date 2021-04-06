@@ -4,11 +4,13 @@
       <table class="table table-hover table-bordered">
         <thead>
           <tr >
-            <th scope="col" *ngFor="let user of top" >{{ user }}</th>
+            <!-- to do: trocar top por colunms: ok -->
+            <th scope="col" *ngFor="let colunm of colunms" >{{ colunm }}</th>
           </tr>
         </thead>
         <tbody>
-            <tr class="" *ngFor="let row of line">
+            <!-- to do:trocar line por rows: ok -->
+            <tr class="" *ngFor="let row of rows">
               <td *ngIf="row.id">
                 {{ row.id }}
               </td>
@@ -18,18 +20,11 @@
               <td *ngIf="row.price">
                 {{ row.price }}
               </td>
+              <td>
+                <button class="btn btn-primary btn-sm" *ngIf="!row.selected" >+</button>
+                <button class="btn btn-danger btn-sm " *ngIf="row.selected" >-</button>
+              </td>
             </tr>
-          <!-- <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr> -->
         </tbody>
       </table>
     </div>

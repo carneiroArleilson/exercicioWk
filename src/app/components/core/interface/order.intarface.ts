@@ -1,6 +1,6 @@
-export interface OrderIntercafe{
+export interface OrderInterface{
   id: number,
-  client: string,
-  products: string,
-  total: number
+  clients?: string[],
+  products?: number[],
+  total?: number
 }

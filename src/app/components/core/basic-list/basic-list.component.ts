@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, Input, OnInit, EventEmitter } from '@angular/core';
+import { Row } from '../interface/row.interface';
 
 @Component({
   selector: 'app-basic-list',
@@ -7,18 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicListComponent implements OnInit {
 
-  //to do: trocar nome de top por colunms: ok
-  colunms = ['id', 'nome', 'preço', 'ação'];
+  @Input() colunms : string[] = [];
+  @Input() rows : Row[] = [];
 
-  //to do: trocar nome de line por rows: ok
-  rows = [
-    { id: 1, name: 'notebook', price: 2500, selected: true },
-    { id: 1, name: 'notebook', price: 2500, selected: false },
-  ];
+  @Output() newItemEvent = new EventEmitter<Array<Row>>();
+
+  addNewItem() {
+    const analise = this.rows.filter(function(row){
+      return row.selected;
+    });
+    this.newItemEvent.emit(analise);
+  }
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  //pesquisar sobre filter, array js.
+  //criar metodo e objeto para emitir os itens selecionados para o componente pai
 
 }

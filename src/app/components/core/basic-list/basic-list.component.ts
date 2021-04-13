@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { Component, Output, Input, OnInit, EventEmitter } from '@angular/core';
 import { Row } from '../interface/row.interface';
 
@@ -31,6 +32,15 @@ export class BasicListComponent implements OnInit {
     this.newOrderEvent.emit(selectedRows);
   }
 
+  reverse(id: number){
+    this.rows.map((element) => {
+      if(element.id == id){
+        element.selected = !element.selected;
+      }
+    })
+
+    this.emitRows();
+  }
 
   constructor() { }
 

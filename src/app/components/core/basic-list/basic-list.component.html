@@ -41,9 +41,9 @@
               </td>
               <td>
                 <!-- ao clicar no butao, alterar o row selected, para true -->
-                <button class="btn btn-primary btn-sm " *ngIf="!row.selected" (click)="emitRows()">+</button>
+                <button class="btn btn-primary btn-sm " *ngIf="!row.selected" (click)="reverse(row.id)">+</button>
                 <!-- ao clicar no butao, alterar o row selected, para false -->
-                <button class="btn btn-danger btn-sm " *ngIf="row.selected" >x</button>
+                <button class="btn btn-danger btn-sm " *ngIf="row.selected" (click)="reverse(row.id)" >x</button>
               </td>
             </tr>
         </tbody>

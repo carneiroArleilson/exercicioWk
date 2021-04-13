@@ -21,7 +21,11 @@ export class BasicListComponent implements OnInit {
 
     emitRows() {
     //trocar a declaração de function pra arrow function
-    const selectedRows = this.rows.filter(function(row){
+
+    // const selectedRows = this.rows.filter(function(row){
+    //   return row.selected;
+    // });
+    const selectedRows = this.rows.filter((row) =>{
       return row.selected;
     });
     this.newOrderEvent.emit(selectedRows);

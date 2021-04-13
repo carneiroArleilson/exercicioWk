@@ -10,20 +10,20 @@ export class ProductsComponent implements OnInit {
 
   column = ["id", "nome", "preço", "ação"];
 
-  product: Row []= [
+  product: Row[] = [
     {id : 1,
     name : 'notebook',
     price : 2500,
     selected : false
   }];
 
-  orders: Array<Row> = [];
+  order: Row[] = [];
 
-  addItem(newItem: Array<Row>) {
-    this.orders.push(newItem);
+  addItem(newOrder: Row[]) {
+    this.order = (newOrder);
+    console.log(this.order);
   }
 
-  //criar um metodo e um objeto para receber os itens selecionados do basic-line(outpot)
   constructor() { }
 
   ngOnInit(): void {

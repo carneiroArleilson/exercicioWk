@@ -1,1 +1,3 @@
-<app-basic-list [colunms]="column" (newItemEvent)="addItem($event)" [rows]= "product" ></app-basic-list>
+
+<div class="d-flex flex-row-reverse"><button class="btn btn-primary" >+</button></div>
+<app-basic-list [colunms]="column" (newOrderEvent)="addItem($event)" [rows]= "product" ></app-basic-list>

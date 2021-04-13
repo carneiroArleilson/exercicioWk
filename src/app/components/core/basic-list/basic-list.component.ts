@@ -11,13 +11,20 @@ export class BasicListComponent implements OnInit {
   @Input() colunms : string[] = [];
   @Input() rows : Row[] = [];
 
-  @Output() newItemEvent = new EventEmitter<Array<Row>>();
+  @Output() newOrderEvent = new EventEmitter<Row[]>();
 
-  addNewItem() {
-    const analise = this.rows.filter(function(row){
+
+  // criar novo metodo ex.: changeRow -
+  //alterar o selected de linha selecionada,
+  //de true pra false e de false pra true
+  //e depois emitir as linhas
+
+    emitRows() {
+    //trocar a declaração de function pra arrow function
+    const selectedRows = this.rows.filter(function(row){
       return row.selected;
     });
-    this.newItemEvent.emit(analise);
+    this.newOrderEvent.emit(selectedRows);
   }
 
 
@@ -26,7 +33,5 @@ export class BasicListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //pesquisar sobre filter, array js.
-  //criar metodo e objeto para emitir os itens selecionados para o componente pai
 
 }

@@ -1,3 +1,44 @@
-
-<div class="d-flex flex-row-reverse"><button class="btn btn-primary" >+</button></div>
-<app-basic-list [colunms]="column" (newOrderEvent)="addItem($event)" [rows]= "product" ></app-basic-list>
+<!-- <div class="m-5">
+  <div class="d-flex justify-content-between mb-5 ">
+    <h2 class="col-8 ">Compras de produtos</h2>
+    <button class="btn btn-primary ">+</button>
+  </div>
+  <app-basic-list
+    [colunms]="column"
+    (newOrderEvent)="addItem($event)"
+    [rows]="product"
+  ></app-basic-list>
+  <div class="d-flex justify-content-between">
+    <h3>
+      Total:
+    </h3>
+    <button class="btn btn-primary">Finalizar</button>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row ">
+    <div class="col">
+      <h1>Produtos</h1>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <button class="btn btn-primary">+</button>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <app-basic-list
+        [colunms]="column"
+        (newOrderEvent)="addItem($event)"
+        [rows]="product"
+      ></app-basic-list>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>Total: {{total}}</h3>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <button class="btn btn-primary " (click)="confirm()">Finalizar</button>
+    </div>
+  </div>
+</div>

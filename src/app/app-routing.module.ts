@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'product', component: ProductsComponent },
   { path: '', redirectTo: 'product', pathMatch: 'full' },
-  { path: 'saleConfirm', component: SaleConfirmComponent }
+  { path: 'saleConfirm', component: SaleConfirmComponent },
 ];
 
 @NgModule({

@@ -1,4 +1,3 @@
-import { element } from 'protractor';
 import { Component, Output, Input, OnInit, EventEmitter } from '@angular/core';
 import { Row } from '../interface/row.interface';
 

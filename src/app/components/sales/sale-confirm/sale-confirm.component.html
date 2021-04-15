@@ -12,13 +12,14 @@
     <div class="col">
       <app-basic-list
         [colunms]="column"
+        (newOrderEvent)="addItem($event)"
         [rows]="this.product"
       ></app-basic-list>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <!-- <h3>Total: {{total}}</h3> -->
+      <h3>Total: {{total}}</h3>
     </div>
     <div class="col d-flex justify-content-end">
       <!-- <button class="btn btn-primary " (click)="confirm()">Finalizar</button> -->

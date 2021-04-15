@@ -1,6 +1,9 @@
+import { ProductInterface } from './../core/interface/product.intarface';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OrderInterface } from '../core/interface/order.intarface';
 import { Row } from '../core/interface/row.interface';
+import {  ProductOrderService } from '../core/service/product-order.service';
 
 @Component({
   selector: 'app-products',
@@ -8,6 +11,12 @@ import { Row } from '../core/interface/row.interface';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
+
+
+  order: Row[] = [];
+  total = 0;
+  items: Row[] = [];
+
 
   column = ["id", "nome", "preço", "ação"];
 
@@ -35,8 +44,14 @@ export class ProductsComponent implements OnInit {
   }
 ];
 
-  order: Row[] = [];
-  total = 0;
+  constructor(
+    private router: Router,
+    private dataService: ProductOrderService,
+  ) {}
+
+  ngOnInit(): void {
+    console.log(this.product);
+  }
 
   addItem(newOrder: Row[]) {
     this.total = 0;
@@ -44,14 +59,16 @@ export class ProductsComponent implements OnInit {
     newOrder.map(order => {this.total += order.price || 0})
   }
   confirm(){
+    // const order : OrderInterface =
+    const products : ProductInterface[] = this.order.map(a => a) as ProductInterface[];
+    const order : OrderInterface = {
+      id : 0,
+      clients : [],
+      products,
+      total : this.total
+    };
+    this.dataService.changeOrder(order);
     this.router.navigate(['saleConfirm'])
-  }
-
-  constructor(
-    private router: Router
-  ) {}
-
-  ngOnInit(): void {
   }
 
 }

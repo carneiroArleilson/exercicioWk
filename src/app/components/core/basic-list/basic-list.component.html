@@ -1,51 +1,61 @@
-<div>
-  <div>
-    <div class="">
-      <table class="table table-hover table-bordered">
-        <thead>
-          <tr >
-            <th scope="col" *ngFor="let colunm of colunms" >{{ colunm }}</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr class="" *ngFor="let row of rows">
-              <td *ngIf="row.id">
-                {{ row.id }}
-              </td>
-              <td *ngIf="row.name">
-                {{ row.name }}
-              </td>
-              <td *ngIf="row.clients">
-                {{ row.clients }}
-              </td>
-              <td *ngIf="row.products">
-                {{ row.products }}
-              </td>
-              <td *ngIf="row.email">
-                {{ row.email }}
-              </td>
-              <td *ngIf="row.birth">
-                {{ row.birth }}
-              </td>
-              <td *ngIf="row.phone">
-                {{ row.phone }}
-              </td>
-              <td *ngIf="row.price">
-                {{ row.price }}
-              </td>
-              <td *ngIf="row.cpf">
-                {{ row.cpf }}
-              </td>
-              <td *ngIf="row.total">
-                {{ row.total }}
-              </td>
-              <td>
-                <button class="btn btn-primary btn-sm " *ngIf="!row.selected" (click)="reverse(row.id)">+</button>
-                <button class="btn btn-danger btn-sm " *ngIf="row.selected" (click)="reverse(row.id)" >x</button>
-              </td>
-            </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="row">
+  <div class="col">
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" *ngFor="let colunm of colunms">{{ colunm }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="" *ngFor="let row of rows">
+          <td *ngIf="row.id">
+            {{ row.id }}
+          </td>
+          <td *ngIf="row.name">
+            {{ row.name }}
+          </td>
+          <td *ngIf="row.clients">
+            {{ row.clients }}
+          </td>
+          <td *ngIf="row.products">
+            {{ row.products }}
+          </td>
+          <td *ngIf="row.email">
+            {{ row.email }}
+          </td>
+          <td *ngIf="row.birth">
+            {{ row.birth }}
+          </td>
+          <td *ngIf="row.phone">
+            {{ row.phone }}
+          </td>
+          <td *ngIf="row.price">
+            {{ row.price }}
+          </td>
+          <td *ngIf="row.cpf">
+            {{ row.cpf }}
+          </td>
+          <td *ngIf="row.total">
+            {{ row.total }}
+          </td>
+          <td>
+            <button
+              class="btn btn-primary btn-sm"
+              *ngIf="!row.selected"
+              (click)="reverse(row.id)"
+            >
+              +
+            </button>
+            <button
+              class="btn btn-danger btn-sm"
+              *ngIf="row.selected"
+              (click)="reverse(row.id)"
+            >
+              x
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

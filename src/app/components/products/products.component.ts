@@ -68,7 +68,7 @@ export class ProductsComponent implements OnInit {
       total : this.total
     };
     this.dataService.changeOrder(order);
-    this.router.navigate(['saleConfirm'])
+    this.router.navigate(['product/saleConfirm'])
   }
 
 }

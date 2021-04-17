@@ -13,6 +13,7 @@ import { ModalCreateProductComponent } from './components/core/modal/modal-creat
 import { ModalConfirmOrderComponent } from './components/core/modal/modal-confirm-order/modal-confirm-order.component';
 import { ModalRemoveProductComponent } from './components/core/modal/modal-remove-product/modal-remove-product.component';
 import { NavComponent } from './components/core/nav/nav.component';
+import { BasicModalComponent } from './components/core/modal/basic-modal/basic-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { NavComponent } from './components/core/nav/nav.component';
     ModalCreateProductComponent,
     ModalConfirmOrderComponent,
     ModalRemoveProductComponent,
-    NavComponent
+    NavComponent,
+    BasicModalComponent
   ],
   imports: [
     BrowserModule,

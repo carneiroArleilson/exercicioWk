@@ -68,7 +68,6 @@ export class ProductsComponent implements OnInit {
     this.product.push(newProduct);
   }
   confirm(){
-    // const order : OrderInterface =
     const products : ProductInterface[] = this.order.map(a => a) as ProductInterface[];
     const order : OrderInterface = {
       id : 0,
@@ -77,7 +76,8 @@ export class ProductsComponent implements OnInit {
       total : this.total
     };
     this.dataService.changeOrder(order);
-    this.router.navigate(['product/saleConfirm'])
+     this.router.navigate(['product/saleConfirm']);
+
   }
 
 }

@@ -29,7 +29,7 @@
       <h3>Total: {{ total }}</h3>
     </div>
     <div class="col d-flex justify-content-end">
-      <button class="btn btn-primary" (click)="confirm()">Finalizar</button>
+      <button class="btn btn-primary" [ngClass]="{'disabled': !(order.length > 0)}"  (click)="confirm()">Finalizar</button>
     </div>
   </div>
 </div>

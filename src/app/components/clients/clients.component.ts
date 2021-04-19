@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientsComponent implements OnInit {
 
+  column = ["id", "nome", "cpf", "email", "aniversário", "telefone", "alteração"]
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,5 +1,5 @@
 import { ProductInterface } from './../core/interface/product.intarface';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { OrderInterface } from '../core/interface/order.intarface';
 import { Row } from '../core/interface/row.interface';
@@ -12,6 +12,7 @@ import {  ProductOrderService } from '../core/service/product-order.service';
 })
 export class ProductsComponent implements OnInit {
 
+  @Output() newProductEvent = new EventEmitter<Row[]>();
 
   order: Row[] = [];
   total = 0;
@@ -57,6 +58,14 @@ export class ProductsComponent implements OnInit {
     this.total = 0;
     this.order = newOrder;
     newOrder.map(order => {this.total += order.price || 0})
+  }
+  addProduct(newProduct: Row){
+    const sortedRows = this.product.map(product => product.id);
+    sortedRows.sort((a, b) => b - a);
+    // const sortedRows = this.product.sort((a, b) => b.id - a.id);
+    const newID = sortedRows[0] + 1;
+    newProduct.id = newID;
+    this.product.push(newProduct);
   }
   confirm(){
     // const order : OrderInterface =

@@ -14,6 +14,12 @@
           <td *ngIf="row.name">
             {{ row.name }}
           </td>
+          <td *ngIf="row.cpf">
+            {{ row.cpf }}
+          </td>
+          <td *ngIf="row.birth">
+            {{ row.birth | date: 'dd/MM/yyyy' }}
+          </td>
           <td *ngIf="row.clients">
             {{ row.clients }}
           </td>
@@ -23,17 +29,11 @@
           <td *ngIf="row.email">
             {{ row.email }}
           </td>
-          <td *ngIf="row.birth">
-            {{ row.birth }}
-          </td>
           <td *ngIf="row.phone">
             {{ row.phone }}
           </td>
           <td *ngIf="row.price">
             {{ row.price }}
-          </td>
-          <td *ngIf="row.cpf">
-            {{ row.cpf }}
           </td>
           <td *ngIf="row.total">
             {{ row.total }}

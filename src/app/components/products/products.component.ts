@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit {
 
 
   column = ["id", "nome", "preço", "ação"];
+  count = 'products';
 
   product: Row[] = [
     {id : 1,

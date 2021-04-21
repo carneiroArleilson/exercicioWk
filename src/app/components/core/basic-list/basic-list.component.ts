@@ -9,6 +9,7 @@ import { Row } from '../interface/row.interface';
 export class BasicListComponent implements OnInit {
   @Input() colunms: string[] = [];
   @Input() rows: Row[] = [];
+  @Input() count = "";
 
   @Output() newOrderEvent = new EventEmitter<Row[]>();
 

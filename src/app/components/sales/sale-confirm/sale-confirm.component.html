@@ -12,6 +12,7 @@
     <div class="col">
       <app-basic-list
         [colunms]="column"
+        [count]="count"
         (newOrderEvent)="addItem($event)"
         [rows]="this.product"
       ></app-basic-list>

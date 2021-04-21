@@ -18,7 +18,7 @@
             {{ row.cpf }}
           </td>
           <td *ngIf="row.birth">
-            {{ row.birth | date: 'dd/MM/yyyy' }}
+            {{ row.birth | date: "dd/MM/yyyy" }}
           </td>
           <td *ngIf="row.clients">
             {{ row.clients }}
@@ -39,20 +39,27 @@
             {{ row.total }}
           </td>
           <td>
-            <button
-              class="btn btn-primary btn-sm"
-              *ngIf="!row.selected"
-              (click)="reverse(row.id)"
-            >
-              +
-            </button>
-            <button
-              class="btn btn-danger btn-sm"
-              *ngIf="row.selected"
-              (click)="reverse(row.id)"
-            >
-              x
-            </button>
+            <div *ngIf="count == 'clients' ">
+              <button class="btn btn-primary bbtn-sm">
+                edit
+              </button>
+            </div>
+            <div *ngIf="(count == 'products' ) || (count == 'saleConfirm')">
+              <button
+                class="btn btn-primary btn-sm"
+                *ngIf="!row.selected"
+                (click)="reverse(row.id)"
+              >
+                +
+              </button>
+              <button
+                class="btn btn-danger btn-sm"
+                *ngIf="row.selected"
+                (click)="reverse(row.id)"
+              >
+                x
+              </button>
+            </div>
           </td>
         </tr>
       </tbody>

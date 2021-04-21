@@ -13,6 +13,7 @@ export class SaleConfirmComponent implements OnInit {
     id: 0,
     selected: false,
   };
+  count = 'saleConfirm'
   product: Row[] = [
     {
       id: 0,

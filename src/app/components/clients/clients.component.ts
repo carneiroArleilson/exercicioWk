@@ -9,7 +9,7 @@ import { Row } from '../core/interface/row.interface';
 export class ClientsComponent implements OnInit {
 
   column = ["id", "nome", "cpf", "nascimento", "email", "telefone", "alteração"]
-
+  count = "clients";
   client: Row[] =[
     {
       id: 1,

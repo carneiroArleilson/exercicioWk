@@ -42,13 +42,9 @@
             <div *ngIf="count == 'clients'">
               <button
                 class="btn btn-primary btn-sm bi bi-pencil"
-                data-bs-toggle="modal"
-                data-bs-target="#edit"
               ></button>
               <button
                 class="btn btn-primary btn-sm bi bi-trash-fill"
-                data-bs-toggle="modal"
-                data-bs-target="#delete"
               ></button>
             </div>
             <div *ngIf="count == 'products' || count == 'saleConfirm'">
@@ -71,40 +67,5 @@
         </tr>
       </tbody>
     </table>
-  </div>
-</div>
-
-<div
-  class="modal fade"
-  id="edit"
-  data-bs-backdrop="static"
-  data-bs-keyboard="false"
-  tabindex="-1"
-  aria-labelledby="staticBackdropLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <app-modal-remove-product></app-modal-remove-product>
-      </div>
-    </div>
-  </div>
-</div>
-<div
-  class="modal fade"
-  id="delete"
-  data-bs-backdrop="static"
-  data-bs-keyboard="false"
-  tabindex="-1"
-  aria-labelledby="staticBackdropLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <app-modal-remove-product></app-modal-remove-product>
-      </div>
-    </div>
   </div>
 </div>

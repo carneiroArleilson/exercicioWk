@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Row } from '../../interface/row.interface';
 
 @Component({
   selector: 'app-modal-remove-product',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal-remove-product.component.css']
 })
 export class ModalRemoveProductComponent implements OnInit {
+
 
   constructor() { }
 

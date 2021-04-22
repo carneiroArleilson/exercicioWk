@@ -13,6 +13,7 @@ export class BasicListComponent implements OnInit {
 
   @Output() newOrderEvent = new EventEmitter<Row[]>();
 
+
   // criar novo metodo ex.: changeRow -
   //alterar o selected de linha selecionada,
   //de true pra false e de false pra true

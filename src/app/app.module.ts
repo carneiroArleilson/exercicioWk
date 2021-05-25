@@ -14,6 +14,10 @@ import { ModalConfirmOrderComponent } from './components/core/modal/modal-confir
 import { ModalRemoveProductComponent } from './components/core/modal/modal-remove-product/modal-remove-product.component';
 import { NavComponent } from './components/core/nav/nav.component';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,11 +31,14 @@ import { FormsModule } from '@angular/forms';
     ModalConfirmOrderComponent,
     ModalRemoveProductComponent,
     NavComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]

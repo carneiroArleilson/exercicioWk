@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Row } from '../../interface/row.interface';
 
 @Component({
   selector: 'app-modal-remove-product',

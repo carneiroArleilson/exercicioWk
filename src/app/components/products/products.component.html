@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="max-height: 100%;">
   <div class="row">
     <div class="col">
       <h1>Produtos</h1>
@@ -15,7 +15,7 @@
       </div>
     </div>
   </div>
-  <div class="row my-3">
+  <div class="row my-3" style="max-height:75% ;">
     <div class="col">
       <app-basic-list
         [colunms]="column"
@@ -25,12 +25,12 @@
       ></app-basic-list>
     </div>
   </div>
-  <div class="row">
+  <div class="row ">
     <div class="col">
-      <h3>Total: {{ total }}</h3>
+      <h3 class="mb-0">Total: {{ total }}</h3>
     </div>
     <div class="col d-flex justify-content-end">
-      <button class="btn btn-primary" [ngClass]="{'disabled': !(order.length > 0)}"  (click)="confirm()">Finalizar</button>
+      <button class="btn btn-dark " style="padding: 4px 8px;" [ngClass]="{'disabled': !(order.length > 0)}"  (click)="confirm()">Finalizar</button>
     </div>
   </div>
 </div>

@@ -22,7 +22,8 @@ export class ProductsComponent implements OnInit {
   column = ["id", "nome", "preço", "ação"];
   count = 'products';
 
-  product: Row[] = [
+  product: Row[] =
+  [
     {id : 1,
     name : 'notebook',
     price : 2500,
@@ -42,6 +43,18 @@ export class ProductsComponent implements OnInit {
   },{id : 5,
     name : 'processador',
     price : 1700,
+    selected : false
+  },{id : 6,
+    name : 'pen-drive',
+    price : 30,
+    selected : false
+  },{id : 7,
+    name : 'pala-mãe',
+    price : 1000,
+    selected : false
+  },{id : 8,
+    name : 'switch',
+    price : 80,
     selected : false
   }
 ];
